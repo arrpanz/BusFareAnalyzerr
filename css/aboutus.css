@@ -1,0 +1,27 @@
+.top{
+	padding:20px 0;
+}
+.top .icon{
+	margin:0;
+}
+.top .icon li{
+	line-height:14px;
+}
+.top .icon li{
+	padding:0 29px 0 0;
+}
+.top .icon li a{
+	color:#333E44;
+	font-size:14px;
+	font-weight:600;
+}
+.top .icon li:hover a{
+	color:#FED700;
+}
+.top .icon li a i{
+	margin-right:10px;
+	color:#FED700;
+}
+.top .icon li:last-child {
+	padding:0 0px 0 0;
+} 

@@ -1,0 +1,162 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: .2s linear;
+    text-transform: capitalize;
+    text-decoration: none;
+}
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+.main-container{
+    background: url(image/background.png);
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 2rem 7%;
+    align-items: center;
+}
+.header .navbar a{
+    font-size: 2rem;
+    margin-left: 2rem;
+    color: white;
+    text-decoration: none;
+}
+.header .navbar a:hover{
+    background: #ffc61a;
+    padding: .5rem 3rem;
+    border-radius: 15px;
+}
+#menu-bars{
+    color: white;
+    font-size: 2rem;
+    display: none;
+
+}
+.navbar.active{
+    top: 10%;
+}
+
+.form-heading{
+    text-align: center;
+    background: black;
+    padding: 1.5rem 0;
+}
+.form-heading h1{
+    font-size: 150%;
+    color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.contact-form{
+    font-size: 20px;
+    width: 79rem;
+    height: 50rem;
+    background: rgb(235, 222, 222);
+    text-align: justify;
+    padding: 2rem 1rem;
+    margin: 0 auto;
+}
+
+.contact-form a{
+    background: rgb(0, 0, 0);
+    text-align: center;
+    width: 100%;
+    display: inline-block;
+    padding: 1rem 5;
+    color: white;
+    font-size: 3rem;
+    
+}
+.calculate{
+    padding: 5rem 22rem;
+}
+
+
+.home-container{
+    background: #ffc61a;
+    padding: 1rem 6%;
+    width: 100%;
+    padding-top: 1rem;
+    
+}
+.home-content{
+    padding-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  
+}
+.inner-content{
+    flex: 1 1 45rem;
+    padding: 1rem;
+}
+.inner-content h3{
+    font-size: 31px;
+}
+.inner-content p{
+    font-size: 2rem;
+    padding-bottom: 1rem;
+}
+
+.Source{
+    padding: 1rem 9rem;
+    font-size: 20px;
+}
+
+
+
+.Destination{
+    margin: center;
+    padding: 1rem 9rem;
+    font-size: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
