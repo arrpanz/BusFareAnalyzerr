@@ -13,7 +13,6 @@ const marker = new google.maps.Marker({
     map: map,
 });
 
-
 }
 
  
