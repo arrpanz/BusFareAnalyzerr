@@ -27,17 +27,105 @@
       </div>
     </nav>
   </header>
-  
-<div class="main-container">
-  <div class="content">
-     hi
-  </div>
-</div>
-<div id="map">
 
-  <!-- <script 
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyATnxm52zPxVmGGoFfpBeNd8q6aMa9-WAw&callback=initMap&v=weekly">
-async</script> -->
-</div>
+  <!--Main Content Starts  -->
+  <div class="center-content">
+    <div class="contact-form">
+        <div class="form-heading">
+            <h1>Calculate Bus Fare</h1>
+        </div>
+
+        <div class="internalText">
+            <p><br>Please verify yourself to the staff before selecting: </p><br>
+            <input type="radio" id="student" name="option" value="student">
+            <label for="student"> Student(45%) </label><br>
+    
+            <input type="radio" id="SeniorCitizen" name="option" value="senior">
+            <label for="SeniorCitizen"> Senior Citizen/Differentially Abled(50%) </label><br>
+    
+            <input type="radio" id="None" name="option" value="none">
+            <label for="None"> None </label> <br><br>
+
+
+            <form  class="form-horizontal">
+                <div class="form-group">
+                    <label for="from" class="label" >From :</label>
+
+                    <div class="input">
+                        <select id="from" class="form-input">
+                            <option value = "None">None</option>
+                            <option value = "Kalanki, kathmandu">Kalanki</option>
+                            <option value = "Satdobato, kathmandu">Satdobato</option>
+                            <option value = "Gwarko, kathmandu">Gwarko</option>
+                            <option value = "Balkumari, kathmandu">Balkumari</option>
+                            <option value = "Koteswor, kathmandu">Koteswor</option>
+                            <option value = "Tinkune, kathmandu">Tinkune</option>
+                            <option value = "Tribhuvan International Airport">Tribhuvan International Airport</option>
+                            <option value = "Gaushala, kathmandu">Gaushala</option>
+                            <option value = "Chabhil, kathmandu">Chabhil</option>
+                            <option value = "Sukedhara, kathmandu">Sukedhara</option>
+                            <option value = "Maharajganj, kathmandu">Maharajganj</option>
+                            <option value = "Basundhara, kathmandu">Basundhara</option>
+                            <option value = "Samakhushi, kathmandu">Samakhushi</option>
+                            <option value = "Gongabu, kathmandu">Gongabu</option>
+                            <option value = "Balaju, kathmandu">Balaju</option>
+                            <option value = "Swayambhunath, kathmandu">Swayambhunath</option>
+                        </select>
+                    </div>
+                </div> 
+
+                <div class="form-group">
+                    <label for="to" class="label" >To : </label>
+
+                    <div class="input">
+                        <select id="to" class="form-input">
+                           <option value = "None">None</option>
+                           <option value = "Kalanki, kathmandu">Kalanki</option>
+                           <option value = "Satdobato, kathmandu">Satdobato</option>
+                           <option value = "Gwarko, kathmandu">Gwarko</option>
+                           <option value = "Balkumari, kathmandu">Balkumari</option>
+                           <option value = "Koteswor, kathmandu">Koteswor</option>
+                           <option value = "Tinkune, kathmandu">Tinkune</option>
+                           <option value = "Tribhuvan International Airport">Tribhuvan International Airport</option>
+                           <option value = "Gaushala, kathmandu">Gaushala</option>
+                           <option value = "Chabhil, kathmandu">Chabhil</option>
+                           <option value = "Sukedhara, kathmandu">Sukedhara</option>
+                           <option value = "Maharajganj, kathmandu">Maharajganj</option>
+                           <option value = "Basundhara, kathmandu">Basundhara</option>
+                           <option value = "Samakhushi, kathmandu">Samakhushi</option>
+                           <option value = "Gongabu, kathmandu">Gongabu</option>
+                           <option value = "Balaju, kathmandu">Balaju</option>
+                           <option value = "Swayambhunath, kathmandu">Swayambhunath</option>
+                        </select>
+                    </div>
+                </div>
+            </form> 
+            <div class="btn">
+                <input class="btn btn-lg" type="button" value="Calculate" onclick="calcRoute()">
+                <!-- <button class="btn btn-info btn-lg" onclick="calcRoute()" ></button> -->
+            </div>                    
+
+            </div>
+            <div class="container-fluid2">
+
+                <div id="fare"> </div>
+                
+                <div id="output">
+                  
+                    
+                </div>
+            </div>
+        </div>  
+        
+     
+            
+      <div id="map">
+      <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyATnxm52zPxVmGGoFfpBeNd8q6aMa9-WAw&callback=initMap&v=weekly">
+          async</script>
+    </div>
+  </div>
+
 </body>
-</html> 
+
+</html>
