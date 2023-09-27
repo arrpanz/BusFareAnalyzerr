@@ -52,7 +52,7 @@ nav ul li {
  }
  
 .contact-form{
-     justify-content : left;
+        justify-content : left;
         height: 40rem;
         width: 30%;
         margin-left: 1px;
@@ -75,11 +75,15 @@ h1{
 
 .internalText{
     font-size: 22px;
+    
 }
 
-#to{
-    size: 20px;
     
+.label.label{
+    display: flex;
+    padding-left: 4px;
+    padding-top: 15px;
+
 }
 .btnDiv{
     display: flex;
@@ -103,13 +107,9 @@ h1{
     transition: 0.1s;
 }
 select{
-    appearance: none;
-  /*  safari  */
-  -webkit-appearance: none;
-  /*  other styles for aesthetics */
   width: 100%;
   font-size: 1.15rem;
-  padding: 0.675em 6em 0.675em 1em;
+  padding: 0.675em 6em 0.675em 2em;
   background-color: #fff;
   border: 1px solid #caced1;
   border-radius: 0.25rem;
