@@ -3,8 +3,9 @@
 
 <head>
   <link rel="stylesheet" href="css/mystyle.css" />
-  <script src="./index.js"></script>
   <meta charset="UTF-8" />
+  <script src="./index.js" ></script>
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bus Fare Analyzer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -45,63 +46,73 @@
     
             <input type="radio" id="None" name="option" value="none">
             <label for="None"> None </label> <br><br>
-
-
             <form  class="form-horizontal">
                 <div class="form-group">
+                  <input class="main-btn" type="button" value="Current Location" onclick="getLocation()">
+
                     <label for="from" class="label">From :</label>
-                    <input class="btn2" type="button" value="Current Location" onclick="getLocation()">
                     <div class="input">
                         <select id="from" class="form-input">
-                            <option value = "None">None</option>
-                            <option value = "Kalanki, kathmandu">Kalanki</option>
-                            <option value = "Satdobato, kathmandu">Satdobato</option>
-                            <option value = "Gwarko, kathmandu">Gwarko</option>
-                            <option value = "Balkumari, kathmandu">Balkumari</option>
-                            <option value = "Koteswor, kathmandu">Koteswor</option>
-                            <option value = "Tinkune, kathmandu">Tinkune</option>
+                            <option value = "Kalanki Bus Stop, Kathmandu">Kalanki</option>
+                           <option value = "Satdobato Bus Stop, Kathmandu">Satdobato</option>
+                            <option value = "Gwarko, Kathmandu">Gwarko</option>
+                            <option value = "Balkumari, Kathmandu">Balkumari</option>
+                           <option value = "Koteshwore Bus Stand, Kathmandu">Koteswor</option>
+                            <option value = "Tinkune, Kathmandu">Tinkune</option>
                             <option value = "Tribhuvan International Airport">Tribhuvan International Airport</option>
-                            <option value = "Gaushala, kathmandu">Gaushala</option>
-                            <option value = "Chabhil, kathmandu">Chabhil</option>
-                            <option value = "Sukedhara, kathmandu">Sukedhara</option>
-                            <option value = "Maharajganj, kathmandu">Maharajganj</option>
-                            <option value = "Basundhara, kathmandu">Basundhara</option>
-                            <option value = "Samakhushi, kathmandu">Samakhushi</option>
-                            <option value = "Gongabu, kathmandu">Gongabu</option>
-                            <option value = "Balaju, kathmandu">Balaju</option>
-                            <option value = "Swayambhunath, kathmandu">Swayambhunath</option>
+                            <option value = "Gaushala, Kathmandu">Gaushala</option>
+                            <option value = "Chabhil, Kathmandu">Chabhil</option>
+                            <option value = "Sukedhara, Kathmandu">Sukedhara</option>
+                            <option value = "Maharajganj, Kathmandu">Maharajganj</option>
+                            <option value = "Basundhara, Kathmandu">Basundhara</option>
+                            <option value = "Samakhushi, Kathmandu">Samakhushi</option>
+                            <option value = "Gongabu, Kathmandu">Gongabu</option>
+                            <option value = "Balaju, Kathmandu">Balaju</option>
+                            <option value = "Swayambhunath, Kathmandu">Swayambhunath</option>
                         </select>
                     </div>
                 </div> 
+
                 <div class="form-group">
                     <label for="to" class="label" >To : </label>
 
                     <div class="input">
                         <select id="to" class="form-input">
-                           <option value = "None">None</option>
-                           <option value = "Kalanki, kathmandu">Kalanki</option>
-                           <option value = "Satdobato, kathmandu">Satdobato</option>
-                           <option value = "Gwarko, kathmandu">Gwarko</option>
-                           <option value = "Balkumari, kathmandu">Balkumari</option>
-                           <option value = "Koteswor, kathmandu">Koteswor</option>
-                           <option value = "Tinkune, kathmandu">Tinkune</option>
+                           <option value = "Satdobato Bus Stop, Kathmandu">Satdobato</option>
+                           <option value = "Gwarko, Kathmandu">Gwarko</option>
+                           <option value = "Balkumari, Kathmandu">Balkumari</option>
+                           <option value = "Koteshwore Bus Stand, Kathmandu">Koteswor</option>
+                           <option value = "Tinkune, Kathmandu">Tinkune</option>
                            <option value = "Tribhuvan International Airport">Tribhuvan International Airport</option>
-                           <option value = "Gaushala, kathmandu">Gaushala</option>
-                           <option value = "Chabhil, kathmandu">Chabhil</option>
-                           <option value = "Sukedhara, kathmandu">Sukedhara</option>
-                           <option value = "Maharajganj, kathmandu">Maharajganj</option>
-                           <option value = "Basundhara, kathmandu">Basundhara</option>
-                           <option value = "Samakhushi, kathmandu">Samakhushi</option>
-                           <option value = "Gongabu, kathmandu">Gongabu</option>
-                           <option value = "Balaju, kathmandu">Balaju</option>
-                           <option value = "Swayambhunath, kathmandu">Swayambhunath</option>
+                           <option value = "Gaushala, Kathmandu">Gaushala</option>
+                           <option value = "Chabhil, Kathmandu">Chabhil</option>
+                           <option value = "Sukedhara, Kathmandu">Sukedhara</option>
+                           <option value = "Maharajganj, Kathmandu">Maharajganj</option>
+                           <option value = "Basundhara, Kathmandu">Basundhara</option>
+                           <option value = "Samakhushi, Kathmandu">Samakhushi</option>
+                           <option value = "Gongabu, Kathmandu">Gongabu</option>
+                           <option value = "Balaju, Kathmandu">Balaju</option>
+                           <option value = "Swayambhunath, Kathmandu">Swayambhunath</option>
                         </select>
                     </div>
                 </div>
             </form> 
+           <div class="first-location">
+            <b>First Location: </b>
+            <p id="latitude"></p>
+            <p id="longitude"></p>
+           </div>
+           
+           <div class="second-location">
+            <b>Second Location:</b>
+            <p id="latitude2"></p>
+            <p id="longitude2"></p>
+           </div>
+
             <div class="btnDiv">
-                <input class="btn1" type="button" value="Calculate" onclick="calcRoute()">
-                <!-- <button class="btn btn-info btn-lg" onclick="calcRoute()" ></button> -->
+              <button class="btn1" onclick="clearStuffs()">Clear</button>
+                <button class="btn1" onclick="getLatLong()">Get Lat & Long</button>
+                <button class="btn1" type="button" onclick="getRoute()">Calculate</button>
             </div>                    
 
             </div>
@@ -114,13 +125,107 @@
                 </div>
             </div>
         </div>  
+      
         
       <div id="map">
-      <script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyATnxm52zPxVmGGoFfpBeNd8q6aMa9-WAw&callback=initMap&v=weekly">
-          async</script>
     </div>
   </div>
+  <script
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyATnxm52zPxVmGGoFfpBeNd8q6aMa9-WAw&callback=initMap&v=weekly" >
+    </script>
+    <script>
+      //Initializing global variables to get value of two selectable form options
+let fromValue = document.getElementById("from").value;
+let toValue = document.getElementById("to").value;
 
+//Initializing global variables of two selectable form options
+const selectFrom = document.getElementById('from');
+const selectTo = document.getElementById('to');
+
+//Listening if a value of the selectable form option has changed (if changed, initializes the latest selected value)
+selectFrom.addEventListener('change', function handleChange(e) {
+    fromValue = document.getElementById("from").value;
+});
+
+
+selectTo.addEventListener('change', function handleChange(e) {
+    toValue = document.getElementById("to").value;
+});
+
+
+//Get Longitude and latitude of first place
+function getLongitudeLatitude(placeName) {
+    const geocoder = new google.maps.Geocoder();
+    const latitudeOutput = document.getElementById("latitude");
+    const longitudeOutput = document.getElementById("longitude");
+
+    geocoder.geocode({
+            address: placeName
+        },
+        function(results, status) {
+            if (status === "OK" && results[0]) {
+                const location = results[0].geometry.location;
+                const lat = location.lat();
+                const lng = location.lng();
+                latitudeOutput.textContent = lat;
+                longitudeOutput.textContent = lng;
+            } else {
+                alert("Geocode was not successful for the following reason: " + status);
+            }
+        }
+    );
+}
+
+//Get Longitude and latitude of second place
+
+
+function getLongitudeLatitude2(placeName) {
+    const geocoder2 = new google.maps.Geocoder();
+    const latitudeOutput2 = document.getElementById("latitude2");
+    const longitudeOutput2 = document.getElementById("longitude2");
+
+    geocoder2.geocode({
+            address: placeName
+        },
+        function(results, status) {
+            if (status === "OK" && results[0]) {
+                const location = results[0].geometry.location;
+                const lat2 = location.lat();
+                const lng2 = location.lng();
+                latitudeOutput2.textContent = lat2;
+                longitudeOutput2.textContent = lng2;
+            } else {
+                alert("Geocode was not successful for the following reason: " + status);
+            }
+        }
+    );
+
+}
+
+function getLatLong() {
+    getLongitudeLatitude(fromValue);
+    getLongitudeLatitude2(toValue);
+}
+
+//Show route function
+function getRoute() {
+    const empt = document.getElementById('latitude').innerHTML;
+    if (empt == null || empt == "") {
+        alert("Please get the longitude and latitude first.");
+    } else {
+        mapRequest(document.getElementById('latitude').textContent, document.getElementById('longitude').textContent, document.getElementById('latitude2').textContent, document.getElementById('longitude2').textContent);
+    }
+}
+
+//Clear latitude and longitude
+function clearStuffs() {
+    document.getElementById("latitude").textContent = '';
+    document.getElementById("longitude").textContent = '';
+
+    document.getElementById("latitude2").textContent = '';
+    document.getElementById("longitude2").textContent = '';
+}
+
+    </script>
 </body>
 </html>
