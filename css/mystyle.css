@@ -18,7 +18,7 @@ button {
     border: none;
     background: none;
     color: white;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', sans-serif !important;
     font-weight: bold;
 }
 
@@ -43,33 +43,20 @@ nav ul li {
 
  .center-content{
     display: flex;
-    margin-top: 2%;
-    margin-left: 1%;
-    margin-right: 1%;
-    align-items:stretch;
-    width: 95%;
-    -webkit-align-items: top;
+  
  }
  
 .contact-form{
-        justify-content : left;
-        height: 40rem;
-        width: 30%;
-        margin-left: 1px;
-        margin-right:5px;
-        border-radius: 40px;
-        padding: 12px;
+        margin: 1rem;
+        border-radius: 20px;
+        padding: 2rem;
         background-color: grey;
 }
 
 h1{
-    display: flex;
-    font-size: 20px;
+    text-align: center;
     border-radius: 5px;
-    align-items: center;
-    margin-left: 0.5px;
-    margin-right: 0.5px;
-    justify-content : center;
+    padding: 1rem;
     background-color: rgb(11, 9, 9);
 }
 
@@ -96,14 +83,14 @@ h1{
     background-color:#0a0a23;
     color: #fff;
     border:none; 
-    size: 10px;
+    font-weight: 500;
     border-radius:10px; 
-    padding:12px;
+    padding: 1rem 2rem;
     font-size: 20px;
     min-height: 30px; 
-    min-width: 120px;
+    cursor: pointer;
   }
-  .btn1:hover {
+  .btn1:hover, .main-btn:hover {
     background-color:#5c5959;
     transition: 0.1s;
 }
@@ -147,4 +134,28 @@ select{
         border: 5px solid rgb(255, 140, 0);
     }
   
-   
+   .first-location p, .second-location p{
+    display: inline;
+   }
+
+   .first-location, .second-location{
+    margin-top: 1rem;
+   }
+
+   .btnDiv button{
+    margin: 0 1rem;
+   }
+
+   .main-btn{
+    width: 100%;
+    background-color:#0a0a23;
+    color: #fff;
+    border:none; 
+    size: 10px;
+    border-radius:10px; 
+    padding:12px;
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif !important;
+
+    cursor: pointer;
+   }
