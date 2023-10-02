@@ -8,30 +8,29 @@ function getLocation() {
     x.innerHTML = "Geolocation is not supported by this browser.";
   }
 }
+
 function showPosition(position) {
   x.innerHTML = "Latitude: " + position.coords.latitude +
   "<br>Longitude: " + position.coords.longitude;
-}
  
+  const marker = new google.maps.Marker({
+    position: getLocation,
+    map: map,
+});
+map.setCenter(getLocation);
 
-
+}
 
 //showMap
 let map;
 function initMap() {
   map = new google.maps.Map(document.getElementById("map"), {
-    center: { lat:27.67573106538192, lng:85.34534985238629 },
-    zoom: 15,
+    center: { lat:27.6999855, lng:85.3278716 },
+    mapId: "1aea3bc268f46967",
+    zoom: 13.2,
   });
 
-  
-const marker = new google.maps.Marker({
-    position: { lat:27.67421109577204, lng:85.32496542193951 },
-    map: map,
-});
-
 }
-
 
 //creating DirectionService function
 var directionsService = new google.maps.DirectionsService();
