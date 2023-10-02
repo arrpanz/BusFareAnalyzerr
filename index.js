@@ -1,24 +1,17 @@
 //GeoLocation
 var x = document.getElementById("currentLocation");
-
 function getLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(showPosition);
-  } else {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
     x.innerHTML = "Geolocation is not supported by this browser.";
   }
 }
 
 function showPosition(position) {
-  x.innerHTML = "Latitude: " + position.coords.latitude +
+  x.innerHTML = "Latitude: " + position.coords.latitude + 
   "<br>Longitude: " + position.coords.longitude;
- 
-  const marker = new google.maps.Marker({
-    position: getLocation,
-    map: map,
-});
-map.setCenter(getLocation);
-
 }
 
 //showMap
