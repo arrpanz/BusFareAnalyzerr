@@ -54,21 +54,20 @@
                     <div class="input">
                         <select id="from" class="form-input">
                             <option value = "Kalanki Bus Stop, Kathmandu">Kalanki</option>
-                           <option value = "Satdobato Bus Stop, Kathmandu">Satdobato</option>
-                            <option value = "Gwarko, Kathmandu">Gwarko</option>
-                            <option value = "Balkumari, Kathmandu">Balkumari</option>
-                           <option value = "Koteshwore Bus Stand, Kathmandu">Koteswor</option>
-                            <option value = "Tinkune, Kathmandu">Tinkune</option>
-                            <option value = "Tribhuvan International Airport">Tribhuvan International Airport</option>
-                            <option value = "Gaushala, Kathmandu">Gaushala</option>
-                            <option value = "Chabhil, Kathmandu">Chabhil</option>
-                            <option value = "Sukedhara, Kathmandu">Sukedhara</option>
-                            <option value = "Maharajganj, Kathmandu">Maharajganj</option>
-                            <option value = "Basundhara, Kathmandu">Basundhara</option>
-                            <option value = "Samakhushi, Kathmandu">Samakhushi</option>
-                            <option value = "Gongabu, Kathmandu">Gongabu</option>
-                            <option value = "Balaju, Kathmandu">Balaju</option>
-                            <option value = "Swayambhunath, Kathmandu">Swayambhunath</option>
+                            <option value = "Satdobato Bus Stop, Kathmandu">Satdobato</option>
+                            <option value = "Gwarko Bus Stand, Kathmandu">Gwarko</option>
+                            <option value = "Balkumari Bus Stand, Kathmandu">Balkumari</option>
+                            <option value = "Koteshwore Bus Stand, Kathmandu">Koteswor</option>
+                            <option value = "Tribhuvan International Airport Bus Stop">Tribhuvan International Airport</option>
+                            <option value = "Gaushala Bus Stop, Kathmandu">Gaushala</option>
+                            <option value = "Chabhil Bus Stop, Kathmandu">Chabhil</option>
+                            <option value = "Sukedhara Bus Stop, Kathmandu">Sukedhara</option>
+                            <option value = "Maharajganj Bus Stop, Kathmandu">Maharajganj</option>
+                            <option value = "Basundhara Bus Stop, Kathmandu">Basundhara</option>
+                            <option value = "Samakhushi Bus Stop, Kathmandu">Samakhushi</option>
+                            <option value = "Gongabu Bus Stop, Kathmandu">Gongabu</option>
+                            <option value = "Balaju Bus Stop, Kathmandu">Balaju</option>
+                            <option value = "Swayambhunath Bus Stop, Kathmandu">Swayambhunath</option>
                         </select>
                     </div>
                 </div> 
@@ -79,20 +78,20 @@
                     <div class="input">
                         <select id="to" class="form-input">
                            <option value = "Satdobato Bus Stop, Kathmandu">Satdobato</option>
-                           <option value = "Gwarko, Kathmandu">Gwarko</option>
-                           <option value = "Balkumari, Kathmandu">Balkumari</option>
+                           <option value = "Gwarko Bus Stand, Kathmandu">Gwarko</option>
+                           <option value = "Balkumari Bus Stand, Kathmandu">Balkumari</option>
                            <option value = "Koteshwore Bus Stand, Kathmandu">Koteswor</option>
-                           <option value = "Tinkune, Kathmandu">Tinkune</option>
-                           <option value = "Tribhuvan International Airport">Tribhuvan International Airport</option>
-                           <option value = "Gaushala, Kathmandu">Gaushala</option>
-                           <option value = "Chabhil, Kathmandu">Chabhil</option>
-                           <option value = "Sukedhara, Kathmandu">Sukedhara</option>
-                           <option value = "Maharajganj, Kathmandu">Maharajganj</option>
-                           <option value = "Basundhara, Kathmandu">Basundhara</option>
-                           <option value = "Samakhushi, Kathmandu">Samakhushi</option>
-                           <option value = "Gongabu, Kathmandu">Gongabu</option>
-                           <option value = "Balaju, Kathmandu">Balaju</option>
-                           <option value = "Swayambhunath, Kathmandu">Swayambhunath</option>
+                           <option value = "Tribhuvan International Airport Bus Stop">Tribhuvan International Airport</option>
+                           <option value = "Gaushala Bus Stop, Kathmandu">Gaushala</option>
+                           <option value = "Chabhil Bus Stop, Kathmandu">Chabhil</option>
+                           <option value = "Sukedhara Bus Stop, Kathmandu">Sukedhara</option>
+                           <option value = "Maharajganj Bus Stop, Kathmandu">Maharajganj</option>
+                           <option value = "Basundhara Bus Stop, Kathmandu">Basundhara</option>
+                           <option value = "Samakhushi Bus Stop, Kathmandu">Samakhushi</option>
+                           <option value = "Gongabu Bus Stop, Kathmandu">Gongabu</option>
+                           <option value = "Balaju Bus Stop, Kathmandu">Balaju</option>
+                           <option value = "Swayambhunath Bus Stop, Kathmandu">Swayambhunath</option>
+                           <option value = "Kalanki Bus Stop, Kathmandu">Kalanki</option>
                         </select>
                     </div>
                 </div>
@@ -146,7 +145,6 @@ const selectTo = document.getElementById('to');
 selectFrom.addEventListener('change', function handleChange(e) {
     fromValue = document.getElementById("from").value;
 });
-
 
 selectTo.addEventListener('change', function handleChange(e) {
     toValue = document.getElementById("to").value;
@@ -217,14 +215,6 @@ function getRoute() {
     }
 }
 
-//Clear latitude and longitude
-function clearStuffs() {
-    document.getElementById("latitude").textContent = '';
-    document.getElementById("longitude").textContent = '';
-
-    document.getElementById("latitude2").textContent = '';
-    document.getElementById("longitude2").textContent = '';
-}
 
     </script>
 </body>

@@ -1,9 +1,9 @@
 //showMap
 function initMap() {
   new google.maps.Map(document.getElementById("map"), {
-    center: { lat: 27.6999855, lng: 85.3278716 },
+    center: { lat: 27.696443, lng: 85.324580},
     mapId: "1aea3bc268f46967",
-    zoom: 12,
+    zoom: 13.3,
   });
 }
 
@@ -35,4 +35,14 @@ function mapRequest(lat1, long1, lat2, long2) {
       console.error("Directions request failed:", status);
     }
   });
+}
+
+//
+//Clear latitude and longitude
+function clearStuffs() {
+  document.getElementById("latitude").textContent = '';
+  document.getElementById("longitude").textContent = '';
+
+  document.getElementById("latitude2").textContent = '';
+  document.getElementById("longitude2").textContent = '';
 }
