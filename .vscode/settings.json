@@ -1,0 +1,10 @@
+{
+    "liveServer.settings.https": {
+    "enable": true, //set it true to enable the feature.
+    "cert": "/Users/pranzz/Documents/BusFareAnalyzerr/.vscode/localhost.pem", //full path of the certificate
+    "key": "/Users/pranzz/Documents/BusFareAnalyzerr/.vscode/localhost.key", //full path of the private key
+    "passphrase": "12345"
+    }
+    }
+   
+    
