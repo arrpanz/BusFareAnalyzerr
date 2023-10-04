@@ -159,3 +159,7 @@ select{
 
     cursor: pointer;
    }
+
+   .distanceOutput{
+    align-items: center;
+   }

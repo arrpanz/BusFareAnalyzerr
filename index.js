@@ -41,9 +41,8 @@ function mapRequest(lat1, long1, lat2, long2) {
   });
 }
 
-// **************************************** markers ****************************************
-// List of locations with custom markers
-// List of locations with custom markers
+// **************************************** distance show ****************************************
+
 
 
 
