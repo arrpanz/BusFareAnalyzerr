@@ -4,7 +4,8 @@
 <head>
   <link rel="stylesheet" href="css/mystyle.css" />
   <meta charset="UTF-8" />
-  <script src="./index.js" ></script>
+  <script src="./index.js"></script>
+  <script src="./calculation.js"></script>
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bus Fare Analyzer</title>
@@ -12,7 +13,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
   <style></style>
-
 </head>
 
 <body>
@@ -136,7 +136,7 @@
     </script>
     <script>
 
-      //Initializing global variables to get value of two selectable form options
+   //Initializing global variables to get value of two selectable form options
 let fromValue = document.getElementById("from").value;
 let toValue = document.getElementById("to").value;
 
@@ -160,7 +160,7 @@ function getLongitudeLatitude(placeName) {
     const longitudeOutput = document.getElementById("longitude");
 
     geocoder.geocode({
-            address: placeName
+            address: placeName  //geocoding request to the Google Maps API
         },
         function(results,status) {
             if (status === "OK" && results[0]) {
