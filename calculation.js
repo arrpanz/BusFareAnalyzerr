@@ -33,9 +33,7 @@ function calculateDistance(lat1, lon1, lat2, lon2) {
 
   //
   function CalcFare(fare){
-console.log(calculateDistance(fare));
-fare.textContent = `Distance: ${(distance / 1000).toFixed(2)} kilometers`;
-
+        
 
   
   }
