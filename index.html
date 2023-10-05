@@ -54,12 +54,10 @@
                     <div class="input">
                         <select id="from" class="form-input">
                             <option value = "27.693361,85.281843">Kalanki</option>
-                            <option value = "Balkhu bus stop,Ring Rd,Kathmandu">Balkhu</option>
-                            <option value = "Ekantakuna bus stop,Ring Rd,Kathmandu">Ekantakuna</option>
                             <option value = "Satdobato Bus Stop,Ring Rd, Kathmandu">Satdobato</option>
                             <option value = "Gwarko Bus Stand,Ring Rd,Kathmandu">Gwarko</option>
                             <option value = "Balkumari Bus Stand,Ring Rd,Kathmandu">Balkumari</option>
-                            <option value = "Koteshwor Bus Stand,Ring Rd,Kathmandu">Koteswor</option>
+                            <option value = "Koteshwore Bus Stand,Ring Rd,Kathmandu">Koteswor</option>
                             <option value = "Tribhuvan International Airport Bus Stop,Ring Rd">Tribhuvan International Airport</option>
                             <option value = "Gaushala Bus Stop,Ring Rd,Kathmandu">Gaushala</option>
                             <option value = "Chabhil Bus Stop,Ring Rd,Kathmandu">Chabhil</option>
@@ -70,7 +68,7 @@
                             <option value = "Gongabu Bus Stop,Ring Rd,Kathmandu">Gongabu</option>
                             <option value = "Balaju Bus Stop,Ring Rd,Kathmandu">Balaju</option>
                             <option value = "Swayambhunath Bus Stop,Ring Rd,Kathmandu">Swayambhunath</option>
-                            
+                            <option value = "Balkhu bus stop,Ring Rd,Kathmandu">Balkhu</option>
                         </select>
                     </div>
                 </div> 
@@ -80,14 +78,12 @@
 
                     <div class="input">
                         <select id="to" class="form-input">
-                            <option value = "27.693361,85.281843">Kalanki</option>
-                            <option value = "Balkhu bus stop,Ring Rd,Kathmandu">Balkhu</option>
-                            <option value = "Ekantakuna bus stop,Ring Rd,Kathmandu">Ekantakuna</option>
                             <option value = "Satdobato Bus Stop,Ring Rd, Kathmandu">Satdobato</option>
+                            <option value = "Kalanki Bus Stop,Ring Rd, Kathmandu">Kalanki</option>
                             <option value = "Gwarko Bus Stand,Ring Rd,Kathmandu">Gwarko</option>
                             <option value = "Balkumari Bus Stand,Ring Rd,Kathmandu">Balkumari</option>
-                            <option value = "Koteshwor Bus Stand,Ring Rd,Kathmandu">Koteswor</option>
-                            <option value = "Tribhuvan International Airport Bus Stop,Ring Rd">Tribhuvan International Airport</option>
+                            <option value = "Koteshwore Bus Stand,Ring Rd,Kathmandu">Koteswor</option>
+                            <option value = "Tribhuvan International Airport Bus Stop,Ring Rd,">Tribhuvan International Airport</option>
                             <option value = "Gaushala Bus Stop,Ring Rd,Kathmandu">Gaushala</option>
                             <option value = "Chabhil Bus Stop,Ring Rd,Kathmandu">Chabhil</option>
                             <option value = "Sukedhara Bus Stop,Ring Rd,Kathmandu">Sukedhara</option>
@@ -97,6 +93,7 @@
                             <option value = "Gongabu Bus Stop,Ring Rd,Kathmandu">Gongabu</option>
                             <option value = "Balaju Bus Stop,Ring Rd,Kathmandu">Balaju</option>
                             <option value = "Swayambhunath Bus Stop,Ring Rd,Kathmandu">Swayambhunath</option>
+                            <option value = "Balkhu bus stop,Ring Rd,Kathmandu">Balkhu</option>
                         </select>
                     </div>
                 </div>
@@ -254,10 +251,10 @@ function calculateDistance(lat1, lon1, lat2, lon2) {
 function getDistance() {
 
     // Extract latitude and longitude values from HTML elements
-    // const lat1 = parseFloat(document.getElementById('latitude').textContent);
-    // const lon1 = parseFloat(document.getElementById('longitude').textContent);
-    // const lat2 = parseFloat(document.getElementById('latitude2').textContent);
-    // const lon2 = parseFloat(document.getElementById('longitude2').textContent);
+    const lat1 = parseFloat(document.getElementById('latitude').textContent);
+    const lon1 = parseFloat(document.getElementById('longitude').textContent);
+    const lat2 = parseFloat(document.getElementById('latitude2').textContent);
+    const lon2 = parseFloat(document.getElementById('longitude2').textContent);
 
     // Check if the latitude and longitude values are valid numbers
     if (!isNaN(lat1) && !isNaN(lon1) && !isNaN(lat2) && !isNaN(lon2)) {
@@ -276,5 +273,3 @@ function getDistance() {
 </script>
 </body>
 </html>
-
-
