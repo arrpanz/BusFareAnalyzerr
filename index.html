@@ -5,7 +5,6 @@
   <link rel="stylesheet" href="css/mystyle.css" />
   <meta charset="UTF-8" />
   <script src="./index.js"></script>
-  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bus Fare Analyzer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -85,7 +84,6 @@
                     <div class="input">
                         <select id="to" class="form-input">
                             <option value = "27.693361,85.281843">Kalanki</option>
-
                             <option value = "None">None</option>
                             <option value = "Balkhu bus stop,Ring Rd,Kathmandu">Balkhu</option>
                             <option value = "Ekantakuna bus stop,Ring Rd,Kathmandu">Ekantakuna</option>
@@ -108,7 +106,7 @@
                 </div>
             </form> 
            <div class="first-location">
-            <b>First Location: </b>
+            <b>Source</b>
             <p id="latitude"></p>
             <p id="longitude"></p>
 
@@ -116,7 +114,7 @@
            </div>
            
            <div class="second-location">
-            <b>Second Location:</b>
+            <b>Destination:</b>
             <p id="latitude2"></p>
             <p id="longitude2"></p>
            </div>
@@ -221,7 +219,6 @@ function getLatLong() {
     getLongitudeLatitude(fromValue);
     getLongitudeLatitude2(toValue);
 }
-
 
 </script>
 </body>
