@@ -5,7 +5,6 @@
   <link rel="stylesheet" href="css/mystyle.css" />
   <meta charset="UTF-8" />
   <script src="./index.js"></script>
-  <script src="./calculation.js"></script>
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bus Fare Analyzer</title>
@@ -39,14 +38,17 @@
 
         <div class="internalText">
             <p><br>Please verify yourself to the staff before selecting: </p><br>
-            <input type="radio" id="student" name="option" value="student">
+           <form> 
+            <input type="radio" name="userType" value="student" >
             <label for="student"> Student(45%) </label><br>
     
-            <input type="radio" id="SeniorCitizen" name="option" value="senior">
+            <input type="radio" name="userType" value="senior">
             <label for="SeniorCitizen"> Senior Citizen/Differentially Abled(50%) </label><br>
     
-            <input type="radio" id="None" name="option" value="none">
-            <label for="None"> None </label> <br>
+            <input type="radio" checked name="userType" value="none">
+            <label for="None">None</label> 
+        </form>
+
             <form  class="form-horizontal">
                 <div class="form-group">
                     <label for="from" class="label">From :</label>
@@ -121,13 +123,13 @@
 
             <div class="btnDiv">
               <button class="btn1" onclick="clearStuffs()">Clear</button>
-                <button class="btn1" onclick="getLatLong()">Get Lat & Long</button>
+                <button class="btn1" onclick="getLatLong();">Get Lat & Long</button>
                 <button class="btn1" type="button" onclick="getRoute()">Calculate</button>
-                <button class="btn1" type="button" onclick="getDistance()">Get DIst</button>
-                <button class="btn1" type="button" onclick="calcFare()">TEST</button>
-
             </div> 
-
+            <div class="fare-head">
+                <h2 style="display: inline;">Fare: </h2>
+                <h2 id="fare-container" style="display: inline;"></h2>
+            </div>
             </div>
             <div class="container-fluid2">
 
@@ -137,7 +139,7 @@
     
                 </div>
             </div>
-            <div id="distanceOutput"></div>
+            <p id="distanceOutput"></p>
         </div>  
        
         
@@ -145,7 +147,7 @@
     </div>
   </div>
   <script
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyATnxm52zPxVmGGoFfpBeNd8q6aMa9-WAw&callback=initMap&v=weekly" >
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyATnxm52zPxVmGGoFfpBeNd8q6aMa9-WAw&callback=initMap&libraries=geometry&v=weekly" >
     </script>
     <script>
 
@@ -216,33 +218,10 @@ function getLongitudeLatitude2(placeName) {
 function getLatLong() {
     const fromValue = document.getElementById('from').value;
     const toValue = document.getElementById('to').value;
-   
     getLongitudeLatitude(fromValue);
     getLongitudeLatitude2(toValue);
-    calculateDistance();
-
 }
 
-
-function AllFunc(){
-    calcFare();
-}
-
-
-
-
-// //Show route function
-// function getRoute() {
-//     const empt = document.getElementById('latitude').innerHTML;
-//     if (empt == null || empt == "") {
-//         alert("Please get the longitude and latitude first.");
-//     } else {
-//         mapRequest(document.getElementById('latitude').textContent, document.getElementById('longitude').textContent, document.getElementById('latitude2').textContent, document.getElementById('longitude2').textContent);
-//     }
-// }
-
-
-//hetteri
 
 </script>
 </body>
