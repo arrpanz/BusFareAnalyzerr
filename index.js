@@ -46,6 +46,13 @@ function mapRequest(lat1, long1, lat2, long2) {
 
 
 
+// CLEAR STUFF START HERE
+
+function clearDistance() {
+  const distanceOutput = document.getElementById('distanceOutput');
+  distanceOutput.textContent = '';
+}
+
 
 //Clear latitude and longitude
 function clearStuffs() {
@@ -70,5 +77,7 @@ function clearStuffs() {
    var selectElement = document.getElementById("to");
    selectElement.selectedIndex = 0; 
 
+   clearDistance();
   
 }
+// CLEAR STUFF END HERE
