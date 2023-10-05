@@ -52,9 +52,11 @@
                     <label for="from" class="label">From :</label>
                     <div class="input">
                         <select id="from" class="form-input">
-                            <option value = "None">None</option>
-                            <option value = "27.693361,85.281843">Kalanki</option>
                             <option value = "Balkhu bus stop,Ring Rd,Kathmandu">Balkhu</option>
+
+                            <option value = "27.693361,85.281843">Kalanki</option>
+                            <option value = "None">None</option>
+
                             <option value = "Ekantakuna bus stop,Ring Rd,Kathmandu">Ekantakuna</option>
                             <option value = "Satdobato Bus Stop,Ring Rd, Kathmandu">Satdobato</option>
                             <option value = "Gwarko Bus Stand,Ring Rd,Kathmandu">Gwarko</option>
@@ -80,8 +82,9 @@
 
                     <div class="input">
                         <select id="to" class="form-input">
-                            <option value = "None">None</option>
                             <option value = "27.693361,85.281843">Kalanki</option>
+
+                            <option value = "None">None</option>
                             <option value = "Balkhu bus stop,Ring Rd,Kathmandu">Balkhu</option>
                             <option value = "Ekantakuna bus stop,Ring Rd,Kathmandu">Ekantakuna</option>
                             <option value = "Satdobato Bus Stop,Ring Rd, Kathmandu">Satdobato</option>
@@ -121,6 +124,7 @@
                 <button class="btn1" onclick="getLatLong()">Get Lat & Long</button>
                 <button class="btn1" type="button" onclick="getRoute()">Calculate</button>
                 <button class="btn1" type="button" onclick="getDistance()">Get DIst</button>
+                <button class="btn1" type="button" onclick="calcFare()">TEST</button>
 
             </div> 
 
@@ -145,7 +149,7 @@
     </script>
     <script>
 
-   //Initializing global variables to get value of two selectable form options
+   //Initializing fromValue and toValue to get value from two source and destination location
 let fromValue = document.getElementById("from").value;
 let toValue = document.getElementById("to").value;
 
@@ -212,22 +216,30 @@ function getLongitudeLatitude2(placeName) {
 function getLatLong() {
     const fromValue = document.getElementById('from').value;
     const toValue = document.getElementById('to').value;
-
    
     getLongitudeLatitude(fromValue);
     getLongitudeLatitude2(toValue);
+    calculateDistance();
 
 }
 
-//Show route function
-function getRoute() {
-    const empt = document.getElementById('latitude').innerHTML;
-    if (empt == null || empt == "") {
-        alert("Please get the longitude and latitude first.");
-    } else {
-        mapRequest(document.getElementById('latitude').textContent, document.getElementById('longitude').textContent, document.getElementById('latitude2').textContent, document.getElementById('longitude2').textContent);
-    }
+
+function AllFunc(){
+    calcFare();
 }
+
+
+
+
+// //Show route function
+// function getRoute() {
+//     const empt = document.getElementById('latitude').innerHTML;
+//     if (empt == null || empt == "") {
+//         alert("Please get the longitude and latitude first.");
+//     } else {
+//         mapRequest(document.getElementById('latitude').textContent, document.getElementById('longitude').textContent, document.getElementById('latitude2').textContent, document.getElementById('longitude2').textContent);
+//     }
+// }
 
 
 //hetteri

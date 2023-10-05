@@ -6,12 +6,25 @@ function initMap() {
     zoom: 13.3,
   });
 }
-//Calculation 
+//allFunc
+function AllFunc(){
+  getRoute();
+  calculate
+}
 
 
 
 
-//////
+//Show route function
+function getRoute() {
+    const empt = document.getElementById('latitude').innerHTML;
+    if (empt == null || empt == "") {
+        alert("Please get the longitude and latitude first.");
+    } else {
+        mapRequest(document.getElementById('latitude').textContent, document.getElementById('longitude').textContent, document.getElementById('latitude2').textContent, document.getElementById('longitude2').textContent);
+    }
+}
+
 //Show route between two places
 function mapRequest(lat1, long1, lat2, long2) {
   const map = new google.maps.Map(document.getElementById("map"), {
@@ -43,36 +56,8 @@ function mapRequest(lat1, long1, lat2, long2) {
 
 // **************************************** distance show ****************************************
 // Calculate distance function
-function calculateDistance(lat1, lon1, lat2, lon2) {
-  const fromLatLng = new google.maps.LatLng(lat1, lon1);
-  const toLatLng = new google.maps.LatLng(lat2, lon2);
-  
-  // Use the Google Maps geometry library to compute distance
-  const distance = google.maps.geometry.spherical.computeDistanceBetween(fromLatLng, toLatLng);
 
-  return distance;
-}
 
-function getDistance() {
-
-  // Extract latitude and longitude values from HTML elements
-  const lat1 = parseFloat(document.getElementById('latitude').textContent);
-  const lon1 = parseFloat(document.getElementById('longitude').textContent);
-  const lat2 = parseFloat(document.getElementById('latitude2').textContent);
-  const lon2 = parseFloat(document.getElementById('longitude2').textContent);
-
-  // Check if the latitude and longitude values are valid numbers
-  if (!isNaN(lat1) && !isNaN(lon1) && !isNaN(lat2) && !isNaN(lon2)) {
-      // Calculate the distance
-      const distance = calculateDistance(lat1, lon1, lat2, lon2);
-
-      // Display the distance on your web page
-      const distanceOutput = document.getElementById('distanceOutput');
-      distanceOutput.textContent = `Distance: ${(distance / 1000).toFixed(2)} kilometers`;
-  } else {
-      alert('Invalid latitude or longitude values.');
-  }
-}
 
 
 
@@ -83,8 +68,6 @@ function clearDistance() {
   const distanceOutput = document.getElementById('distanceOutput');
   distanceOutput.textContent = '';
 }
-
-
 //Clear latitude and longitude
 function clearStuffs() {
   document.getElementById("latitude").textContent = '';
