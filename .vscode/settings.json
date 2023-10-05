@@ -1,8 +1,13 @@
 {
     "liveServer.settings.https": {
     "enable": true, //set it true to enable the feature.
+<<<<<<< HEAD
     "cert": "C:\\Users\\NITRO5\\Desktop\\BusFareAnalyzerr\\.vscode\\localhost.pem", //full path of the certificate
     "key": "C:\\Users\\NITRO5\\Desktop\\BusFareAnalyzerr\\.vscode\\localhost.key", //full path of the private key
+=======
+    "cert": "/Users/pranzz/Documents/BusFareAnalyzerr/.vscode/localhost.pem", //full path of the certificate
+    "key": "/Users/pranzz/Documents/BusFareAnalyzerr/.vscode/localhost.key", //full path of the private key
+>>>>>>> cb0be2dbe246315996ccbc1c485d0b5befe4c542
     "passphrase": "12345"
     }
     }
