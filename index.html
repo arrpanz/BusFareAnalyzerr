@@ -102,6 +102,8 @@
             <b>First Location: </b>
             <p id="latitude"></p>
             <p id="longitude"></p>
+
+
            </div>
            
            <div class="second-location">
@@ -114,7 +116,9 @@
               <button class="btn1" onclick="clearStuffs()">Clear</button>
                 <button class="btn1" onclick="getLatLong()">Get Lat & Long</button>
                 <button class="btn1" type="button" onclick="getRoute()">Calculate</button>
-            </div>                    
+                <button class="btn1" type="button" onclick="getDistance()">Get DIst</button>
+
+            </div> 
 
             </div>
             <div class="container-fluid2">
@@ -125,8 +129,9 @@
     
                 </div>
             </div>
+            <div id="distanceOutput"></div>
         </div>  
-      
+       
         
       <div id="map">
     </div>
@@ -177,7 +182,6 @@ function getLongitudeLatitude(placeName) {
 }
 
 //Get Longitude and latitude of second place
-
 function getLongitudeLatitude2(placeName) {
     const geocoder2 = new google.maps.Geocoder();
     const latitudeOutput2 = document.getElementById("latitude2");
@@ -202,8 +206,13 @@ function getLongitudeLatitude2(placeName) {
 }
 
 function getLatLong() {
+    const fromValue = document.getElementById('from').value;
+    const toValue = document.getElementById('to').value;
+
+   
     getLongitudeLatitude(fromValue);
     getLongitudeLatitude2(toValue);
+
 }
 
 //Show route function
@@ -242,10 +251,10 @@ function calculateDistance(lat1, lon1, lat2, lon2) {
 function getDistance() {
 
     // Extract latitude and longitude values from HTML elements
-    // const lat1 = parseFloat(document.getElementById('latitude').textContent);
-    // const lon1 = parseFloat(document.getElementById('longitude').textContent);
-    // const lat2 = parseFloat(document.getElementById('latitude2').textContent);
-    // const lon2 = parseFloat(document.getElementById('longitude2').textContent);
+    const lat1 = parseFloat(document.getElementById('latitude').textContent);
+    const lon1 = parseFloat(document.getElementById('longitude').textContent);
+    const lat2 = parseFloat(document.getElementById('latitude2').textContent);
+    const lon2 = parseFloat(document.getElementById('longitude2').textContent);
 
     // Check if the latitude and longitude values are valid numbers
     if (!isNaN(lat1) && !isNaN(lon1) && !isNaN(lat2) && !isNaN(lon2)) {
@@ -260,7 +269,8 @@ function getDistance() {
     }
 }
 
+//hetteri
 
-    </script>
+</script>
 </body>
 </html>
