@@ -54,5 +54,21 @@ function clearStuffs() {
 
   document.getElementById("latitude2").textContent = '';
   document.getElementById("longitude2").textContent = '';
+
+  // Clear radio button selections
+  var studentRadio = document.getElementById("student");
+  var SeniorCitizenRadio = document.getElementById("SeniorCitizen");
+  var NoneRadio = document.getElementById("None");
+
+  studentRadio.checked = false;
+  SeniorCitizenRadio.checked = false;
+  NoneRadio.checked = false;
+
+   // Clear select tag selection
+   var selectElement = document.getElementById("from");
+   selectElement.selectedIndex = 0;
+   var selectElement = document.getElementById("to");
+   selectElement.selectedIndex = 0; 
+
   
 }
