@@ -80,9 +80,7 @@ function mapRequest(lat1, long1, lat2, long2) {
     toLatLng
   );
 
-  distanceOutput.innerText = `Distance: ${(distance / 1000).toFixed(
-    2
-  )} kilometers`;
+  distanceOutput.innerText = `Distance: ${(distance / 1000).toFixed(2)} kilometers`;
   fareOutput.innerText = `Rs ${calculateFare(distance)}`;
 }
 
