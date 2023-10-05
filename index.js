@@ -23,7 +23,7 @@ function getRoute() {
     }
   }, 2000);
 }
-
+//Calculation
 function calculateFare(distance) {
   const userType = document.querySelector(
     'input[name="userType"]:checked'
