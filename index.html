@@ -106,7 +106,7 @@
                 </div>
             </form> 
            <div class="first-location">
-            <b>Source</b>
+            <b>Source:</b>
             <p id="latitude"></p>
             <p id="longitude"></p>
 
@@ -124,8 +124,9 @@
                 <button class="btn1" onclick="getLatLong();">Get Lat & Long</button>
                 <button class="btn1" type="button" onclick="getRoute()">Calculate</button>
             </div> 
+
             <div class="fare-head">
-                <h2 style="display: inline;">Fare: </h2>
+                <h2 style="display: inline;">The Fare is : </h2>
                 <h2 id="fare-container" style="display: inline;"></h2>
             </div>
             </div>
@@ -205,7 +206,7 @@ function getLongitudeLatitude2(placeName) {
                 const lat2 = location.lat();
                 const lng2 = location.lng();
                 
-                latitudeOutput2.textContent = lat2;
+               latitudeOutput2.textContent = lat2;
                 longitudeOutput2.textContent = lng2;
             } else {
                 alert("Geocode was not successful for the following reason: " + status);
@@ -220,6 +221,8 @@ function getLatLong() {
     const toValue = document.getElementById('to').value;
     getLongitudeLatitude(fromValue);
     getLongitudeLatitude2(toValue);
+    
+
 }
 
 </script>
