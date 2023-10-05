@@ -86,38 +86,40 @@ function mapRequest(lat1, long1, lat2, long2) {
   fareOutput.innerText = `Rs ${calculateFare(distance)}`;
 }
 
-// **************************************** distance show ****************************************
-// Calculate distance function
+
 
 // CLEAR STUFF START HERE
 
-function clearDistance() {
-  const distanceOutput = document.getElementById("distanceOutput");
-  distanceOutput.textContent = "";
-}
-//Clear latitude and longitude
 function clearStuffs() {
+  // Clear userType radio buttons
+  const radioButtons = document.querySelectorAll('input[name="userType"]');
+  for (const radioButton of radioButtons) {
+    radioButton.checked = false;
+  }
+
+  // Clear "from" and "to" select elements
+  document.getElementById("from").selectedIndex = 0;
+  document.getElementById("to").selectedIndex = 0;
+
+  // Clear latitude and longitude
   document.getElementById("latitude").textContent = "";
   document.getElementById("longitude").textContent = "";
-
   document.getElementById("latitude2").textContent = "";
   document.getElementById("longitude2").textContent = "";
 
-  // Clear radio button selections
-  var studentRadio = document.getElementById("student");
-  var SeniorCitizenRadio = document.getElementById("SeniorCitizen");
-  var NoneRadio = document.getElementById("None");
+  // Clear fare
+  document.getElementById("fare-container").textContent = "";
 
-  studentRadio.checked = false;
-  SeniorCitizenRadio.checked = false;
-  NoneRadio.checked = false;
+  // Clear distance
+  document.getElementById("distanceOutput").textContent = "";
 
-  // Clear select tag selection
-  var selectElement = document.getElementById("from");
-  selectElement.selectedIndex = 0;
-  var selectElement = document.getElementById("to");
-  selectElement.selectedIndex = 0;
-
-  clearDistance();
+  // Clear the map route
+  const map = new google.maps.Map(document.getElementById("map"), {
+    center: { lat: 27.696443, lng: 85.32458 },
+    mapId: "1aea3bc268f46967",
+    zoom: 13.3,
+  });
 }
+
 // CLEAR STUFF END HERE
+
