@@ -40,7 +40,7 @@ function calculateFare(distance) {
   } else if (userType === "senior") {
     return fare - (50 / 100) * fare;
   } else {
-    return (fare).toFixed(2);
+    return (fare);
   }
 }
 
