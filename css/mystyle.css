@@ -94,7 +94,9 @@ h1{
     background-color:#5c5959;
     transition: 0.1s;
 }
-
+.currLoc{
+    margin: 12px;
+}
 select{
   width: 100%;
   font-size: 1.15rem;
