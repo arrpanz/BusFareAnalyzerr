@@ -36,13 +36,14 @@ function calculateFare(distance) {
   const distanceInKm = (distance / 1000).toFixed(2);
   const fare = baseFare + farePerKilometer + distanceInKm;
   if (userType === "student") {
-    return fare - (45 / 100) * fare;
+    return parseInt(fare - (45 / 100) * fare);
   } else if (userType === "senior") {
-    return fare - (50 / 100) * fare;
+    return parseInt(fare - (50 / 100) * fare);
   } else {
-    return (fare);
+    return parseInt(fare);
   }
 }
+
 
 //Show route between two places
 function mapRequest(lat1, long1, lat2, long2) {
