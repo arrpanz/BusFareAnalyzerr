@@ -81,7 +81,7 @@
                 <div class="form-group">
                     <label for="to" class="label" >To : </label>
 
-                    <div class="input">
+                    < class="input">
                         <select id="to" class="form-input">
                             
                             <!-- <option value = "None">None</option> -->
@@ -103,7 +103,6 @@
                             <option value = "Balaju Bus Stop,Ring Rd,Kathmandu">Balaju</option>
                             <option value = "Swayambhunath Bus Stop,Ring Rd,Kathmandu">Swayambhunath</option>
                         </select>
-                    </div>
                 </div>
             </form> 
             <div class="first-location">
@@ -118,10 +117,12 @@
             <p id="latitude2"></p>
             <p id="longitude2"></p>
             ]</b>
+            </div>
+            </div>
 
 
-            <p id="distanceOutput"></p>
-               </div></div>
+            <p id="distanceOutput"><b>Distance:</b></p>
+               
 
             <div class="btnDiv">
               <button class="btn1" onclick="clearStuffs()">Clear</button>
@@ -132,7 +133,10 @@
             </div> 
 
             <div class="fare-head">
+                <h2 style="display: inline;">The Fare is : </h2>
+                <h2 id="fare-container" style="display: inline;"></h2>
             </div>
+
             <div class="currLoc"></div>
             <button class="btn1" onclick="getLocation()">Current Location</button>
             <p id="currLoc"></p>
