@@ -24,6 +24,28 @@ function getRoute() {
   }, 2000);
 }
 //Calculation
+// function calculateFare(distance) {
+//   const userType = document.querySelector(
+//     'input[name="userType"]:checked'
+//   ).value;
+//   const baseFare = 13;
+//   const prevPrice = 165;
+//   const currPrice = 175;
+
+//   const changeInPrice = ((currPrice-prevPrice)/currPrice);  
+
+//   const changeRate = (changeInPrice * 100).toFixed(2);
+//   const distanceInKm = (distance / 1000).toFixed(2);
+//   const fare = (baseFare + changeRate + distanceInKm);
+//   if (userType === "student") {
+//     return (fare - (0.45) * fare);
+//   } else if (userType === "senior") {
+//     return (fare - (0.50) * fare);
+//   } else {
+//     return fare;
+//   }
+// }
+
 function calculateFare(distance) {
   const userType = document.querySelector(
     'input[name="userType"]:checked'
@@ -32,17 +54,19 @@ function calculateFare(distance) {
   const prevPrice = 165;
   const currPrice = 175;
     
-  let farePerKilometer = (((currPrice-prevPrice)/currPrice)*100);
+  const farePerKilometer = ((currPrice - prevPrice) / currPrice) * 100;
   const distanceInKm = (distance / 1000).toFixed(2);
-  const fare = baseFare + farePerKilometer + distanceInKm;
+  const fare = baseFare + (farePerKilometer * distanceInKm);
+  
   if (userType === "student") {
-    return parseInt(fare - (45 / 100) * fare);
+    return parseFloat((fare - (0.45 * fare)).toFixed(2)); // Apply discount and round result
   } else if (userType === "senior") {
-    return parseInt(fare - (50 / 100) * fare);
+    return parseFloat((fare - (0.50 * fare)).toFixed(2)); // Apply discount and round result
   } else {
-    return parseInt(fare);
+    return parseFloat(fare.toFixed(2)); // Round default fare
   }
 }
+
 
 
 //Show route between two places

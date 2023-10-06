@@ -12,7 +12,7 @@
        function showPosition(position) {
          currLoc.innerHTML = "Latitude: " + position.coords.latitude + 
          "<br>Longitude: " + position.coords.longitude;
+         
        }
        //Current Location Block Ends here
-       
        //https://softauthor.com/google-maps-api-realtime-tracking-javascript/
