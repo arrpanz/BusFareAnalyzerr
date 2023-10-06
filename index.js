@@ -34,7 +34,7 @@ function calculateFare(distance) {
     
   let farePerKilometer = (((currPrice-prevPrice)/currPrice)*100);
   const distanceInKm = (distance / 1000).toFixed(2);
-  const fare = baseFare + farePerKilometer * distanceInKm;
+  const fare = baseFare + farePerKilometer + distanceInKm;
   if (userType === "student") {
     return fare - (45 / 100) * fare;
   } else if (userType === "senior") {

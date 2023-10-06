@@ -55,7 +55,7 @@
                     <label for="from" class="label">From :</label>
                     <div class="input">
                         <select id="from" class="form-input">
-                            <option value = "None">None</option>
+                            <!-- <option value = "None">None</option> -->
                             <option value = "27.693361,85.281843">Kalanki</option>
                             <option value = "Balkhu bus stop,Ring Rd,Kathmandu">Balkhu</option>
                             <option value = "Ekantakuna bus stop,Ring Rd,Kathmandu">Ekantakuna</option>
@@ -84,9 +84,9 @@
                     <div class="input">
                         <select id="to" class="form-input">
                             
-                            <option value = "None">None</option>
-                            <option value = "27.693361,85.281843">Kalanki</option>
+                            <!-- <option value = "None">None</option> -->
                             <option value = "Balkhu bus stop,Ring Rd,Kathmandu">Balkhu</option>
+                            <option value = "27.693361,85.281843">Kalanki</option>
                             <option value = "Ekantakuna bus stop,Ring Rd,Kathmandu">Ekantakuna</option>
                             <option value = "Satdobato Bus Stop,Ring Rd, Kathmandu">Satdobato</option>
                             <option value = "Gwarko Bus Stand,Ring Rd,Kathmandu">Gwarko</option>
@@ -106,26 +106,18 @@
                     </div>
                 </div>
             </form> 
-
-            <div class="currLoc"></div>
-
-            <button class="btn1" onclick="getLocation()">Get Current Location</button>
-            <p id="currLoc"></p>
-
-            
             <div class="first-location">
-            <b>Source:</b>
+            <b>Source:[
             <p id="latitude"></p>
             <p id="longitude"></p>
-
-
+            ]</b>
            </div>
            
            <div class="second-location">
-            <b>Destination:</b>
+            <b>Destination:[
             <p id="latitude2"></p>
             <p id="longitude2"></p>
-            <br>
+            ]</b>
             <p id="distanceOutput"></p>
                </div></div>
 
@@ -141,10 +133,10 @@
                 <h2 style="display: inline;">The Fare is : </h2>
                 <h2 id="fare-container" style="display: inline;"></h2>
             </div>
+            <div class="currLoc"></div>
+            <button class="btn1" onclick="getLocation()">Current Location</button>
+            <p id="currLoc"></p>
             </div>
-            
-
-       
         
       <div id="map">
     </div>
