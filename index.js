@@ -59,11 +59,11 @@ function calculateFare(distance) {
   const fare = baseFare + (farePerKilometer * distanceInKm);
   
   if (userType === "student") {
-    return parseFloat((fare - (0.45 * fare)).toFixed(2)); // Apply discount and round result
+    return parseFloat((fare - (0.45 * fare)).toFixed(2)); 
   } else if (userType === "senior") {
-    return parseFloat((fare - (0.50 * fare)).toFixed(2)); // Apply discount and round result
+    return parseFloat((fare - (0.50 * fare)).toFixed(2)); 
   } else {
-    return parseFloat(fare.toFixed(2)); // Round default fare
+    return parseFloat(fare.toFixed(2)); // Round-about fare
   }
 }
 
