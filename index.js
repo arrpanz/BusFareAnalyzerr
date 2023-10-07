@@ -97,6 +97,35 @@ function mapRequest(lat1, long1, lat2, long2) {
       console.error("Directions request failed:", status);
     }
     directionsRenderer.setMap(map);
+//start
+    const steps = response.routes[0].overview_path;
+    console.log(steps);
+
+    const marker = new google.maps.Marker({
+      map: map,
+      position: {
+          lat: steps[0].lat(),
+          lng: steps[0].lng()
+      },
+      label: '🚘',
+      zIndex: 1,
+  });
+
+  let i = 0;
+const interval = setInterval(function() {
+    i++;
+    if (i === steps.length) {
+        clearInterval(interval);
+        return
+    }
+
+    marker.setPosition({
+        lat: steps[i].lat(),
+        lng: steps[i].lng()
+    });
+
+}, 1000);
+    //yah samma
   });
 
   const fromLatLng = new google.maps.LatLng(lat1, long1);
