@@ -32,7 +32,7 @@ function getRoute() {
 //   const prevPrice = 165;
 //   const currPrice = 175;
 
-//   const changeInPrice = ((currPrice-prevPrice)/currPrice);  
+//   const changeInPrice = ((currPrice-prevPrice)/currPrice);
 
 //   const changeRate = (changeInPrice * 100).toFixed(2);
 //   const distanceInKm = (distance / 1000).toFixed(2);
@@ -50,29 +50,27 @@ function calculateFare(distance) {
   const userType = document.querySelector(
     'input[name="userType"]:checked'
   ).value;
+  const fareOutput = document.getElementById("fare-container");
   const baseFare = 10;
-  const prevPrice = 165;
-  const currPrice = 175;
-    
-  const farePerKilometer = ((currPrice - prevPrice) / currPrice) * 100;
+  const farePerKilometer = 5;
   const distanceInKm = (distance / 1000).toFixed(2);
-  const fare = baseFare + (farePerKilometer + distanceInKm);
-  console.log(fare);
+  const fare = baseFare + farePerKilometer + distanceInKm;
   if (userType === "student") {
-    return parseFloat((fare - (0.45 * fare)).toFixed(2)); 
+    fareOutput.textContent = `Rs ${
+      Math.round((fare - 0.45 * fare) * 100) / 100
+    }`;
   } else if (userType === "senior") {
-    return parseFloat((fare - (0.50 * fare)).toFixed(2)); 
+    fareOutput.textContent = `Rs ${
+      Math.round((fare - 0.5 * fare) * 100) / 100
+    }`;
   } else {
-    return parseFloat(fare.toFixed(2)); // Round-about fare
+    fareOutput.textContent = `Rs ${Math.round(fare * 100) / 100}`;
   }
 }
-
-
 
 //Show route between two places
 function mapRequest(lat1, long1, lat2, long2) {
   const distanceOutput = document.getElementById("distanceOutput");
-  const fareOutput = document.getElementById("fare-container");
   const map = new google.maps.Map(document.getElementById("map"), {
     center: { lat: 27.6999855, lng: 85.3278716 },
     mapId: "1aea3bc268f46967",
@@ -97,34 +95,33 @@ function mapRequest(lat1, long1, lat2, long2) {
       console.error("Directions request failed:", status);
     }
     directionsRenderer.setMap(map);
-//start
+    //start
     const steps = response.routes[0].overview_path;
     console.log(steps);
 
     const marker = new google.maps.Marker({
       map: map,
       position: {
-          lat: steps[0].lat(),
-          lng: steps[0].lng()
+        lat: steps[0].lat(),
+        lng: steps[0].lng(),
       },
-      label: '🚘',
+      label: "🚘",
       zIndex: 1,
-  });
-
-  let i = 0;
-const interval = setInterval(function() {
-    i++;
-    if (i === steps.length) {
-        clearInterval(interval);
-        return
-    }
-
-    marker.setPosition({
-        lat: steps[i].lat(),
-        lng: steps[i].lng()
     });
 
-}, 1000);
+    let i = 0;
+    const interval = setInterval(function () {
+      i++;
+      if (i === steps.length) {
+        clearInterval(interval);
+        return;
+      }
+
+      marker.setPosition({
+        lat: steps[i].lat(),
+        lng: steps[i].lng(),
+      });
+    }, 1000);
     //yah samma
   });
 
@@ -137,11 +134,11 @@ const interval = setInterval(function() {
     toLatLng
   );
 
+  console.log(distance);
+
   distanceOutput.innerText = `Distance: ${(distance / 1000).toFixed(2)} kms.`;
-  fareOutput.innerText = `Rs ${calculateFare(distance)}`;
+  calculateFare(distance);
 }
-
-
 
 // CLEAR STUFF START HERE
 
@@ -177,4 +174,3 @@ function clearStuffs() {
 }
 
 // CLEAR STUFF END HERE
-
