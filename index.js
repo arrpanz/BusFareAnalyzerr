@@ -1,6 +1,5 @@
-// Merged JavaScript code from index.html and index.js
 
-// Initialize Google Maps
+// Initializing Google Maps
 
 function initMap() {
   new google.maps.Map(document.getElementById("map"), {
@@ -27,7 +26,7 @@ function getRoute() {
   }, 2000);
 }
 
-// Calculation
+// Calculation part begins here
 function calculateFare(distance) {
   const userType = document.querySelector(
     'input[name="userType"]:checked'
@@ -49,7 +48,9 @@ function calculateFare(distance) {
     fareOutput.textContent = `Rs ${Math.round(fare * 100) / 100}`;
   }
 }
+// Calculation part ends here
 
+//Live location begins here
 const trackLocation = ({ onSuccess, onError = () => {} }) => {
   if ("geolocation" in navigator === false) {
     return onError(new Error("Geolocation is not supported by your browser."));
@@ -59,8 +60,9 @@ const trackLocation = ({ onSuccess, onError = () => {} }) => {
     enableHighAccuracy: true,
   });
 };
+//Live location ends here
 
-// Show route between two places
+// Showing the route between two selected values/points (START)
 function mapRequest(lat1, long1, lat2, long2) {
   const distanceOutput = document.getElementById("distanceOutput");
 
@@ -92,7 +94,7 @@ function mapRequest(lat1, long1, lat2, long2) {
     const fromLatLng = new google.maps.LatLng(lat1, long1);
     const toLatLng = new google.maps.LatLng(lat2, long2);
 
-    // Use the Google Maps geometry library to compute distance
+  
     const distance = google.maps.geometry.spherical.computeDistanceBetween(
       fromLatLng,
       toLatLng
@@ -100,18 +102,37 @@ function mapRequest(lat1, long1, lat2, long2) {
 
     distanceOutput.innerText = `Distance: ${(distance / 1000).toFixed(2)} kms.`;
     calculateFare(distance);
+
+    const initialPosition = { lat: Number(lat1), lng: Number(long1) };
+    const marker = new google.maps.Marker({
+      map: map,
+      position: initialPosition,
+      label: "🚘",
+      zIndex: 999,
+    });
+    trackLocation({
+      onSuccess: ({ coords: { latitude: lat, longitude: lng } }) => {
+        marker.setPosition({ lat, lng });
+        console.log({ lat, lng });
+      },
+      onError: (err) =>
+        alert(`Error: ${getPositionErrorMessage(err.code) || err.message}`),
+    });
   });
 }
+// route between two selected values/points (End)
 
-// Clear user selections and data
+
+// Clear the screen begins here
 function clearStuffs() {
+
   // Clear userType radio buttons
   const radioButtons = document.querySelectorAll('input[name="userType"]');
   for (const radioButton of radioButtons) {
     radioButton.checked = false;
   }
 
-  // Clear "from" and "to" select elements
+  // Clear "from" and "to" selected elements
   document.getElementById("from").selectedIndex = 0;
   document.getElementById("to").selectedIndex = 0;
 
@@ -134,16 +155,20 @@ function clearStuffs() {
     zoom: 13.3,
   });
 }
+// Clear the screen ends here
+
 
 // Initializing fromValue and toValue to get value from two source and destination location
 let fromValue = document.getElementById("from").value;
 let toValue = document.getElementById("to").value;
 
+
 // Initializing global variables of two selectable form options
 const selectFrom = document.getElementById("from");
 const selectTo = document.getElementById("to");
 
-// Listening if a value of the selectable form option has changed (if changed, initializes the latest selected value)
+
+// Event Listner if a value of the selectable form option has changed.
 selectFrom.addEventListener("change", function handleChange(e) {
   fromValue = document.getElementById("from").value;
 });
@@ -151,6 +176,7 @@ selectFrom.addEventListener("change", function handleChange(e) {
 selectTo.addEventListener("change", function handleChange(e) {
   toValue = document.getElementById("to").value;
 });
+
 
 // Get Longitude and latitude of first place
 function getLongitudeLatitude(placeName) {

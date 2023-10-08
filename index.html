@@ -5,7 +5,6 @@
   <link rel="stylesheet" href="css/mystyle.css" />
   <meta charset="UTF-8" />
   <script src="./index.js"></script>
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bus Fare Analyzer</title>
@@ -30,7 +29,7 @@
     </nav>
   </header>
 
-  <!--Main Content Starts  -->
+  <!--Main Content Starts here  -->
   <div class="center-content">
     <div class="contact-form">
         <div class="form-heading">
@@ -55,7 +54,8 @@
                     <label for="from" class="label">From :</label>
                     <div class="input">
                         <select id="from" class="form-input">
-                            <!-- <option value = "None">None</option> -->
+                          
+                            <option value = "None">None</option>
                             <option value = "Sanepa bus stop,Ring Rd,Kathmandu">Sanepa</option>
                             <option value = "27.693361,85.281843">Kalanki</option>  
                              <option value = "Satdobato Bus Stop,Ring Rd, Kathmandu">Satdobato</option>
@@ -79,12 +79,10 @@
 
                 <div class="form-group">
                     <label for="to" class="label" >To : </label>
-
                         <select id="to" class="form-input">
                             
-                            <!-- <option value = "None">None</option> -->
+                            <option value = "None">None</option>
                             <option value = "27.693361,85.281843">Kalanki</option>
-
                             <option value = "Sanepa bus stop,Ring Rd,Kathmandu">Sanepa</option>
                             <option value = "Ekantakuna bus stop,Ring Rd,Kathmandu">Ekantakuna</option>
                             <option value = "Satdobato Bus Stop,Ring Rd, Kathmandu">Satdobato</option>
@@ -146,5 +144,6 @@
   <script
   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyATnxm52zPxVmGGoFfpBeNd8q6aMa9-WAw&callback=mapRequest&libraries=geometry&v=weekly" >
     </script>
+    <!--Main Content ends here  -->
 </body>
 </html>        
