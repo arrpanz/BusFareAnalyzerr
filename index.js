@@ -100,6 +100,22 @@ function mapRequest(lat1, long1, lat2, long2) {
 
     distanceOutput.innerText = `Distance: ${(distance / 1000).toFixed(2)} kms.`;
     calculateFare(distance);
+
+    const initialPosition = { lat: Number(lat1), lng: Number(long1) };
+    const marker = new google.maps.Marker({
+      map: map,
+      position: initialPosition,
+      label: "🚘",
+      zIndex: 999,
+    });
+    trackLocation({
+      onSuccess: ({ coords: { latitude: lat, longitude: lng } }) => {
+        marker.setPosition({ lat, lng });
+        console.log({ lat, lng });
+      },
+      onError: (err) =>
+        alert(`Error: ${getPositionErrorMessage(err.code) || err.message}`),
+    });
   });
 }
 
