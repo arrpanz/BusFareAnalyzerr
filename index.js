@@ -55,7 +55,9 @@ const trackLocation = ({ onSuccess, onError = () => {} }) => {
     return onError(new Error("Geolocation is not supported by your browser."));
   }
 
-  return navigator.geolocation.watchPosition(onSuccess, onError);
+  return navigator.geolocation.watchPosition(onSuccess, onError, {
+    enableHighAccuracy: true,
+  });
 };
 
 // Show route between two places
