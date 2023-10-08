@@ -47,7 +47,7 @@
     
             <input type="radio" checked name="userType" value="none">
             <label for="None">None</label> 
-           </form>
+        </form>
         
             <form  class="form-horizontal">
                 <div class="form-group">
@@ -72,6 +72,7 @@
                             <option value = "Gongabu Bus Stop,Ring Rd,Kathmandu">Gongabu</option>
                             <option value = "Balaju Bus Stop,Ring Rd,Kathmandu">Balaju</option>
                             <option value = "Swayambhunath Bus Stop,Ring Rd,Kathmandu">Swayambhunath</option>
+                            
                         </select>
                     </div>
                 </div> 
@@ -79,6 +80,7 @@
                 <div class="form-group">
                     <label for="to" class="label" >To : </label>
                         <select id="to" class="form-input">
+                            
                             <option value = "None">None</option>
                             <option value = "27.693361,85.281843">Kalanki</option>
                             <option value = "Sanepa bus stop,Ring Rd,Kathmandu">Sanepa</option>
@@ -104,7 +106,7 @@
             <p id="latitude"></p>
             <p id="longitude"></p>
             ]</b>
-            </div>
+           </div>
            
            <div class="second-location">
             <b>Destination:[
@@ -112,28 +114,33 @@
             <p id="longitude2"></p>
             ]</b>
             </div>
-        </div>
-        
-        <p id="distanceOutput"><b>Distance:</b></p>
-        
-        <div class="btnDiv">
-          <button class="btn1" onclick="clearStuffs()">Clear</button>
-          <button class="btn1" onclick="getLatLong();">Get Lat & Long</button>
-          <button class="btn1" type="button" onclick=" getRoute()">Calculate</button>
-        </div> 
+            </div>
 
-        <div class="fare-head">
-          <h2 style="display: inline;">The Fare is : </h2>
-          <h2 id="fare-container" style="display: inline;"></h2>
-        </div>
+
+            <p id="distanceOutput"><b>Distance:</b></p>
+               
+
+            <div class="btnDiv">
+              <button class="btn1" onclick="clearStuffs()">Clear</button>
+                <button class="btn1" onclick="getLatLong();">Get Lat & Long</button>
+                <button class="btn1" type="button" onclick=" getRoute()">Calculate</button>
+
+
+            </div> 
+
+            <div class="fare-head">
+                <h2 style="display: inline;">The Fare is : </h2>
+                <h2 id="fare-container" style="display: inline;"></h2>
+            </div>
+
+            </div> 
+        
+      <div id="map">
     </div>
-      
-      <div id="map"> </div>
   </div>
   <script
   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyATnxm52zPxVmGGoFfpBeNd8q6aMa9-WAw&callback=mapRequest&libraries=geometry&v=weekly" >
     </script>
     <!--Main Content ends here  -->
-    
 </body>
 </html>        
