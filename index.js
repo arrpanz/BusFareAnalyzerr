@@ -7,6 +7,8 @@ function initMap() {
     mapId: "1aea3bc268f46967",
     zoom: 13.3,
   });
+ 
+  
 }
 
 // Show route function
@@ -24,6 +26,7 @@ function getRoute() {
       );
     }
   }, 2000);
+  
 }
 
 // Calculation
@@ -48,6 +51,8 @@ function calculateFare(distance) {
 // Show route between two places
 function mapRequest(lat1, long1, lat2, long2) {
   const distanceOutput = document.getElementById("distanceOutput");
+  
+  
   const map = new google.maps.Map(document.getElementById("map"), {
     center: { lat: 27.6999855, lng: 85.3278716 },
     mapId: "1aea3bc268f46967",
@@ -72,6 +77,33 @@ function mapRequest(lat1, long1, lat2, long2) {
       console.error("Directions request failed:", status);
     }
     directionsRenderer.setMap(map);
+
+    const steps = response.routes[0].overview_path;
+
+    const marker = new google.maps.Marker({
+          map: map,
+          position: {
+            lat: steps[0].lat(),
+            lng: steps[0].lng(),
+          },
+          label: "🚘",
+          zIndex: 1,
+        });
+    
+        let i = 0;
+        const interval = setInterval(function () {
+          i++;
+          if (i === steps.length) {
+            clearInterval(interval);
+            return;
+          }
+    
+          marker.setPosition({
+            lat: steps[i].lat(),
+            lng: steps[i].lng(),
+          });
+        }, 1000);
+
 
     const fromLatLng = new google.maps.LatLng(lat1, long1);
     const toLatLng = new google.maps.LatLng(lat2, long2);
@@ -118,6 +150,8 @@ function clearStuffs() {
     zoom: 13.3,
   });
 }
+
+
 
 // Initializing fromValue and toValue to get value from two source and destination location
 let fromValue = document.getElementById("from").value;
