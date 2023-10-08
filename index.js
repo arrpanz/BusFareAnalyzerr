@@ -50,14 +50,14 @@ function calculateFare(distance) {
   const userType = document.querySelector(
     'input[name="userType"]:checked'
   ).value;
-  const baseFare = 13;
+  const baseFare = 10;
   const prevPrice = 165;
   const currPrice = 175;
     
   const farePerKilometer = ((currPrice - prevPrice) / currPrice) * 100;
   const distanceInKm = (distance / 1000).toFixed(2);
-  const fare = baseFare + (farePerKilometer * distanceInKm);
-  
+  const fare = baseFare + (farePerKilometer + distanceInKm);
+  console.log(fare);
   if (userType === "student") {
     return parseFloat((fare - (0.45 * fare)).toFixed(2)); 
   } else if (userType === "senior") {
