@@ -51,10 +51,10 @@ function calculateFare(distance) {
     'input[name="userType"]:checked'
   ).value;
   const fareOutput = document.getElementById("fare-container");
-  const baseFare = 10;
-  const farePerKilometer = 5;
+  const baseFare = 13;
+  const farePerKilometer = 2;
   const distanceInKm = (distance / 1000).toFixed(2);
-  const fare = baseFare + farePerKilometer + distanceInKm;
+  const fare = baseFare + (farePerKilometer * distanceInKm);
   if (userType === "student") {
     fareOutput.textContent = `Rs ${
       Math.round((fare - 0.45 * fare) * 100) / 100
@@ -86,6 +86,13 @@ function mapRequest(lat1, long1, lat2, long2) {
     origin: start,
     destination: end,
     travelMode: "DRIVING",
+    // waypoints: [
+    //   {
+    //     location: new google.maps.LatLng(27.706112, 85.345665), // Specify the coordinates of the waypoint
+    //     stopover: false, // Indicates that it's a stopover point
+    //   },
+    //   // Add more waypoints if needed
+    // ],
   };
 
   directionsService.route(request, function (response, status) {
@@ -102,8 +109,8 @@ function mapRequest(lat1, long1, lat2, long2) {
     const marker = new google.maps.Marker({
       map: map,
       position: {
-        lat: steps[0].lat(),
-        lng: steps[0].lng(),
+        lat:  latitude,
+        lng:  longitude,
       },
       label: "🚘",
       zIndex: 1,
@@ -118,8 +125,8 @@ function mapRequest(lat1, long1, lat2, long2) {
       }
 
       marker.setPosition({
-        lat: steps[i].lat(),
-        lng: steps[i].lng(),
+        lat: latitude,
+        lng: longitude,
       });
     }, 1000);
     //yah samma
