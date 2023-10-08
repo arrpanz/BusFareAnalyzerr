@@ -1,4 +1,6 @@
-//showMap
+// Merged JavaScript code from index.html and index.js
+
+// Initialize Google Maps
 function initMap() {
   new google.maps.Map(document.getElementById("map"), {
     center: { lat: 27.696443, lng: 85.32458 },
@@ -7,7 +9,7 @@ function initMap() {
   });
 }
 
-//Show route function
+// Show route function
 function getRoute() {
   const empt = document.getElementById("latitude").innerHTML;
   setTimeout(function () {
@@ -23,29 +25,8 @@ function getRoute() {
     }
   }, 2000);
 }
-//Calculation
-// function calculateFare(distance) {
-//   const userType = document.querySelector(
-//     'input[name="userType"]:checked'
-//   ).value;
-//   const baseFare = 13;
-//   const prevPrice = 165;
-//   const currPrice = 175;
 
-//   const changeInPrice = ((currPrice-prevPrice)/currPrice);
-
-//   const changeRate = (changeInPrice * 100).toFixed(2);
-//   const distanceInKm = (distance / 1000).toFixed(2);
-//   const fare = (baseFare + changeRate + distanceInKm);
-//   if (userType === "student") {
-//     return (fare - (0.45) * fare);
-//   } else if (userType === "senior") {
-//     return (fare - (0.50) * fare);
-//   } else {
-//     return fare;
-//   }
-// }
-
+// Calculation
 function calculateFare(distance) {
   const userType = document.querySelector(
     'input[name="userType"]:checked'
@@ -54,21 +35,17 @@ function calculateFare(distance) {
   const baseFare = 13;
   const farePerKilometer = 2;
   const distanceInKm = (distance / 1000).toFixed(2);
-  const fare = baseFare + (farePerKilometer * distanceInKm);
+  const fare = baseFare + farePerKilometer * distanceInKm;
   if (userType === "student") {
-    fareOutput.textContent = `Rs ${
-      Math.round((fare - 0.45 * fare) * 100) / 100
-    }`;
+    fareOutput.textContent = `Rs ${Math.round((fare - 0.45 * fare) * 100) / 100}`;
   } else if (userType === "senior") {
-    fareOutput.textContent = `Rs ${
-      Math.round((fare - 0.5 * fare) * 100) / 100
-    }`;
+    fareOutput.textContent = `Rs ${Math.round((fare - 0.5 * fare) * 100) / 100}`;
   } else {
     fareOutput.textContent = `Rs ${Math.round(fare * 100) / 100}`;
   }
 }
 
-//Show route between two places
+// Show route between two places
 function mapRequest(lat1, long1, lat2, long2) {
   const distanceOutput = document.getElementById("distanceOutput");
   const map = new google.maps.Map(document.getElementById("map"), {
@@ -86,13 +63,6 @@ function mapRequest(lat1, long1, lat2, long2) {
     origin: start,
     destination: end,
     travelMode: "DRIVING",
-    // waypoints: [
-    //   {
-    //     location: new google.maps.LatLng(27.706112, 85.345665), // Specify the coordinates of the waypoint
-    //     stopover: false, // Indicates that it's a stopover point
-    //   },
-    //   // Add more waypoints if needed
-    // ],
   };
 
   directionsService.route(request, function (response, status) {
@@ -102,54 +72,22 @@ function mapRequest(lat1, long1, lat2, long2) {
       console.error("Directions request failed:", status);
     }
     directionsRenderer.setMap(map);
-    //start
-    const steps = response.routes[0].overview_path;
-    console.log(steps);
 
-    
-  //   const marker = new google.maps.Marker({
-  //     map: map,
-  //     position: {
-  //       lat: steps[0].lat(),
-  //       lng: steps[0].lng(),
-  //     },
-  //     label: "🚘",
-  //     zIndex: 1,
-  //   });
+    const fromLatLng = new google.maps.LatLng(lat1, long1);
+    const toLatLng = new google.maps.LatLng(lat2, long2);
 
-  //   let i = 0;
-  //   const interval = setInterval(function () {
-  //     i++;
-  //     if (i === steps.length) {
-  //       clearInterval(interval);
-  //       return;
-  //     }
+    // Use the Google Maps geometry library to compute distance
+    const distance = google.maps.geometry.spherical.computeDistanceBetween(
+      fromLatLng,
+      toLatLng
+    );
 
-  //     marker.setPosition({
-  //       lat: steps[i].lat(),
-  //       lng: steps[i].lng(),
-  //     });
-  //   }, 1000);
-  //   //yah samma
-   });
-
-  const fromLatLng = new google.maps.LatLng(lat1, long1);
-  const toLatLng = new google.maps.LatLng(lat2, long2);
-
-  // Use the Google Maps geometry library to compute distance
-  const distance = google.maps.geometry.spherical.computeDistanceBetween(
-    fromLatLng,
-    toLatLng
-  );
-
-  console.log(distance);
-
-  distanceOutput.innerText = `Distance: ${(distance / 1000).toFixed(2)} kms.`;
-  calculateFare(distance);
+    distanceOutput.innerText = `Distance: ${(distance / 1000).toFixed(2)} kms.`;
+    calculateFare(distance);
+  });
 }
 
-// CLEAR STUFF START HERE
-
+// Clear user selections and data
 function clearStuffs() {
   // Clear userType radio buttons
   const radioButtons = document.querySelectorAll('input[name="userType"]');
@@ -181,4 +119,75 @@ function clearStuffs() {
   });
 }
 
-// CLEAR STUFF END HERE
+// Initializing fromValue and toValue to get value from two source and destination location
+let fromValue = document.getElementById("from").value;
+let toValue = document.getElementById("to").value;
+
+// Initializing global variables of two selectable form options
+const selectFrom = document.getElementById('from');
+const selectTo = document.getElementById('to');
+
+// Listening if a value of the selectable form option has changed (if changed, initializes the latest selected value)
+selectFrom.addEventListener('change', function handleChange(e) {
+    fromValue = document.getElementById("from").value;
+});
+
+selectTo.addEventListener('change', function handleChange(e) {
+    toValue = document.getElementById("to").value;
+});
+
+// Get Longitude and latitude of first place
+function getLongitudeLatitude(placeName) {
+    const geocoder = new google.maps.Geocoder();
+    const latitudeOutput = document.getElementById("latitude");
+    const longitudeOutput = document.getElementById("longitude");
+
+    geocoder.geocode({
+            address: placeName  //geocoding request to the Google Maps API
+        },
+        function(results,status) {
+            if (status === "OK" && results[0]) {
+                const location = results[0].geometry.location;
+                const lat = location.lat();
+                const lng = location.lng();
+
+                latitudeOutput.textContent =  lat ;
+                longitudeOutput.textContent =  lng;
+            } else {
+                alert("Geocode was not successful for the following reason: " + status);
+            }
+        }
+    );
+}
+
+// Get Longitude and latitude of second place
+function getLongitudeLatitude2(placeName) {
+    const geocoder2 = new google.maps.Geocoder();
+    const latitudeOutput2 = document.getElementById("latitude2");
+    const longitudeOutput2 = document.getElementById("longitude2");
+
+    geocoder2.geocode({
+            address: placeName
+        },
+        function(results, status) {
+            if (status === "OK" && results[0]) {
+                const location = results[0].geometry.location;
+                const lat2 = location.lat();
+                const lng2 = location.lng();
+                
+               latitudeOutput2.textContent = lat2;
+                longitudeOutput2.textContent = lng2;
+            } else {
+                alert("Geocode was not successful for the following reason: " + status);
+            }
+        }
+    );
+
+}
+
+function getLatLong() {
+    const fromValue = document.getElementById('from').value;
+    const toValue = document.getElementById('to').value;
+    getLongitudeLatitude(fromValue);
+    getLongitudeLatitude2(toValue);
+}
